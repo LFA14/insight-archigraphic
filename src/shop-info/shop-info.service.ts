@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ShopInfo } from './shop-info.entity';
@@ -18,7 +18,7 @@ export class ShopInfoService {
     async update(shopName: string, updateShopInfoDto: UpdateShopInfoDto): Promise<ShopInfo> {
         const shopInfo = await this.shopInfoRepository.findOne({ where: { shopName } });
         if (!shopInfo) {
-            throw new Error('Shop info not found');
+            throw new NotFoundException('Shop info not found');
         }
         Object.assign(shopInfo, updateShopInfoDto);
         return this.shopInfoRepository.save(shopInfo);

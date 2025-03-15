@@ -12,30 +12,33 @@ export class EmployeesService {
         private readonly employeesRepository: Repository<Employee>,
     ) { }
 
-    create(createEmployeeDto: CreateEmployeeDto): Promise<Employee> {
+    async create(createEmployeeDto: CreateEmployeeDto): Promise<Employee> {
         const employee = this.employeesRepository.create(createEmployeeDto);
-        return this.employeesRepository.save(employee);
+        return await this.employeesRepository.save(employee);
     }
 
     async findAll(): Promise<Employee[]> {
-        return this.employeesRepository.find();
+        return await this.employeesRepository.find();
     }
 
     async findOne(id: number): Promise<Employee> {
-        return this.employeesRepository.findOneOrFail({ where: { empID: id } });
+        const employee = await this.employeesRepository.findOne({ where: { empID: id } });
+        if (!employee) {
+            throw new NotFoundException(`Employee with ID ${id} not found`);
+        }
+        return employee;
     }
 
     async update(id: number, updateEmployeeDto: UpdateEmployeeDto): Promise<Employee> {
         const employee = await this.findOne(id);
-        if (!employee) {
-            throw new Error('Employee not found');
-        }
         Object.assign(employee, updateEmployeeDto);
-        return this.employeesRepository.save(employee);
+        return await this.employeesRepository.save(employee);
     }
 
     async remove(id: number): Promise<void> {
-        const employee = await this.findOne(id);
-        await this.employeesRepository.remove(employee);
+        const result = await this.employeesRepository.delete(id);
+        if (result.affected === 0) {
+            throw new NotFoundException(`Employee with ID ${id} not found`);
+        }
     }
 }

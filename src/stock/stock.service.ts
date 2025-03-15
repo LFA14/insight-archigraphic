@@ -17,35 +17,45 @@ export class StockService {
 
     async create(createStockDto: CreateStockDto): Promise<Stock> {
         const product = await this.productRepository.findOneBy({ productID: createStockDto.productID });
-        if (!product) throw new NotFoundException('Product not found');
+        if (!product) {
+            throw new NotFoundException(`Product with ID ${createStockDto.productID} not found`);
+        }
 
         const stock = this.stockRepository.create({ ...createStockDto, product });
-        return this.stockRepository.save(stock);
+        return await this.stockRepository.save(stock);
     }
 
     async findAll(): Promise<Stock[]> {
-        return this.stockRepository.find({ relations: ['product'] });
+        return await this.stockRepository.find({ relations: ['product'] });
     }
 
     async findOne(id: number): Promise<Stock> {
         const stock = await this.stockRepository.findOne({ where: { stockID: id }, relations: ['product'] });
-        if (!stock) throw new NotFoundException('Stock entry not found');
+        if (!stock) {
+            throw new NotFoundException(`Stock entry with ID ${id} not found`);
+        }
         return stock;
     }
 
     async update(id: number, updateStockDto: UpdateStockDto): Promise<Stock> {
-        const stock = await this.findOne(id);
+        const stock = await this.findOne(id); // Ensures stock exists, otherwise throws NotFoundException
+
         if (updateStockDto.productID) {
             const product = await this.productRepository.findOneBy({ productID: updateStockDto.productID });
-            if (!product) throw new NotFoundException('Product not found');
+            if (!product) {
+                throw new NotFoundException(`Product with ID ${updateStockDto.productID} not found`);
+            }
             stock.product = product;
         }
+
         Object.assign(stock, updateStockDto);
-        return this.stockRepository.save(stock);
+        return await this.stockRepository.save(stock);
     }
 
     async remove(id: number): Promise<void> {
-        const stock = await this.findOne(id);
-        await this.stockRepository.remove(stock);
+        const result = await this.stockRepository.delete(id);
+        if (result.affected === 0) {
+            throw new NotFoundException(`Stock entry with ID ${id} not found`);
+        }
     }
 }

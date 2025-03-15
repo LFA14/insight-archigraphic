@@ -12,30 +12,33 @@ export class ProductsService {
         private readonly productsRepository: Repository<Product>,
     ) { }
 
-    create(createProductDto: CreateProductDto): Promise<Product> {
+    async create(createProductDto: CreateProductDto): Promise<Product> {
         const product = this.productsRepository.create(createProductDto);
-        return this.productsRepository.save(product);
+        return await this.productsRepository.save(product);
     }
 
     async findAll(): Promise<Product[]> {
-        return this.productsRepository.find();
+        return await this.productsRepository.find();
     }
 
     async findOne(id: number): Promise<Product> {
-        return this.productsRepository.findOneOrFail({ where: { productID: id } });
+        const product = await this.productsRepository.findOne({ where: { productID: id } });
+        if (!product) {
+            throw new NotFoundException(`Product with ID ${id} not found`);
+        }
+        return product;
     }
 
     async update(id: number, updateProductDto: UpdateProductDto): Promise<Product> {
-        const product = await this.findOne(id);
-        if (!product) {
-            throw new Error('Product not found');
-        }
+        const product = await this.findOne(id); // Ensures product exists, otherwise throws NotFoundException
         Object.assign(product, updateProductDto);
-        return this.productsRepository.save(product);
+        return await this.productsRepository.save(product);
     }
 
     async remove(id: number): Promise<void> {
-        const product = await this.findOne(id);
-        await this.productsRepository.remove(product);
+        const result = await this.productsRepository.delete(id);
+        if (result.affected === 0) {
+            throw new NotFoundException(`Product with ID ${id} not found`);
+        }
     }
 }

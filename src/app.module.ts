@@ -7,6 +7,8 @@ import { Employee } from './employees/employee.entity';
 import { ProductsModule } from './products/products.module';
 import { ShopInfoModule } from './shop-info/shop-info.module';
 import { StockModule } from './stock/stock.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -24,7 +26,9 @@ import { StockModule } from './stock/stock.module';
     EmployeesModule,
     ProductsModule,
     ShopInfoModule,
-    StockModule
+    StockModule,
+    AuthModule,
+    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService]
