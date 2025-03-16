@@ -4,7 +4,8 @@ import { Repository } from 'typeorm';
 import { User } from '../users/user.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { SignUpDto } from './dto/SignUpDTO';
+import { SignUpDto } from './dto/signup.dto';
+
 
 @Injectable()
 export class AuthService {
