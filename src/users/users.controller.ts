@@ -6,7 +6,6 @@ import {
     Param,
     Post,
     ParseIntPipe,
-    UseGuards,
 } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './user.entity';
