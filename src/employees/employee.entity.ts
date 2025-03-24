@@ -15,5 +15,8 @@ export class Employee {
     empPhone: string;
 
     @Column()
+    empRole: string;
+
+    @Column()
     empSalary: number;
 }
