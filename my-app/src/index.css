@@ -1,0 +1,562 @@
+/* <-------------------------------------------------------------------------> */
+/* Login CSS */
+/* Global Background Color */
+body {
+  background-color: #181733;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Login Page Container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Logo Styling */
+.login-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.login-form-container {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+  width: 350px;
+}
+
+/* Label Styling */
+.login-form-container .form-label {
+  color: rgb(11, 75, 184);
+  font-weight: bold;
+}
+
+/* Input Fields */
+.login-form-container .form-control {
+  background-color: #ffffff;
+  border: 1px solid rgb(11, 75, 184);
+  color: black;
+}
+
+.login-form-container .form-control:focus {
+  border-color: rgb(11, 75, 184);
+  box-shadow: 0 0 5px rgb(11, 75, 184);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: rgb(11, 75, 184);
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: rgb(2, 57, 152);
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 10px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.signup-link {
+  color: rgb(11, 75, 184);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.signup-link:hover {
+  color: rgb(2, 57, 152);
+}
+
+/* <-------------------------------------------------------------------------> */
+/* Admin Page Styling */
+.admin-container {
+  background-color: #181733;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+/* Logo Styling */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.logo {
+  width: 200px;
+  height: 150px;
+  height: auto;
+}
+
+/* Cards Container */
+.cards-container {
+  max-width: 1100px;
+}
+
+/* Cards Styling */
+.admin-card {
+  width: 370px;
+  /* Increase size slightly */
+  height: 320px;
+  /* Make all cards the same height */
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Force all cards to be the same size */
+.same-size-card {
+  width: 370px;
+  height: 320px;
+}
+
+/* Image inside card */
+.admin-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Hover Effect */
+.admin-card:hover {
+  transform: scale(1.05);
+}
+
+/* Center Button */
+.admin-card .card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-card .btn {
+  margin-bottom: 20px;
+}
+
+/* <-------------------------------------------------------------------------> */
+/* Registration */
+/* Registration Page Container */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Logo Styling */
+.registration-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.registration-form-container {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+  /* Dark golden glow */
+  width: 350px;
+}
+
+/* Label Styling */
+.registration-form-container .form-label {
+  color: rgb(11, 75, 184);
+  font-weight: bold;
+}
+
+/* Input Fields */
+.registration-form-container .form-control {
+  background-color: #ffffff;
+  border: 1px solid rgb(11, 75, 184);
+  color: black;
+}
+
+.registration-form-container .form-control:focus {
+  border-color: rgb(11, 75, 184);
+  box-shadow: 0 0 5px rgb(11, 75, 184);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: rgb(11, 75, 184);
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: rgb(2, 57, 152);
+}
+
+/* <-------------------------------------------------------------------------> */
+/* Users */
+/* Users Page Container */
+.users-title {
+  color: white;
+  font-weight: bold;
+}
+
+/* Users Table */
+.users-table {
+  background-color: white;
+}
+
+/* <-------------------------------------------------------------------------> */
+/* Employees */
+/* Ensure title is visible */
+h2.text-center {
+  color: white;
+  font-weight: bold;
+}
+
+/* Flexbox to align buttons and title */
+.container {
+  position: relative;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* <-------------------------------------------------------------------------> */
+/* Home page */
+/* slider */
+.carousel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel img {
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+
+/* side bar */
+/* Sidebar Styling */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  color: #fff;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #181733;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1002;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar h3 {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  color: #f1c40f;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Overlay when sidebar is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+/* Adjust carousel for better spacing */
+.carousel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel img {
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+/* <-------------------------------------------------------------------------> */
+/* about us page */
+.about-container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #f8b400;
+  /* Use a color that fits your theme */
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #f8b400;
+  /* Keep your theme color */
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.text-section {
+  padding: 20px;
+}
+
+.image-section img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* <-------------------------------------------------------------------------> */
+/*contact us */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Full page height */
+  background: var(--your-theme-bg-color);
+  /* Keep it matching your theme */
+  flex-direction: column;
+}
+
+.contact-logo {
+  width: 120px;
+  /* Adjust logo size */
+  margin-bottom: 10px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #f8b400;
+  /* Your theme color */
+  margin-bottom: 30px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  /* Light glass effect */
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 20px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #f8b400;
+  /* Theme color */
+}
+
+.insta-icon {
+  color: #E4405F;
+  /* Instagram color */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    height: auto;
+    padding: 50px 20px;
+  }
+}
+
+/* <-------------------------------------------------------------------------> */
+/*business cards*/
+/*traditional cards*/
+.traditional-cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.traditional-card {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%;
+  padding-bottom: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.star-icon {
+  color: yellow;
+  margin-right: 5px;
+}
+
+.rating {
+  font-weight: bold;
+}
+
+.reviews {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.card-price {
+  margin-top: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.text-gray-400 {
+  color: white;
+  text-align: center;
+}
+
+.text-3xl {
+  color: white;
+  text-align: center;
+
+}
+
+/* <-------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------> */
+/* <-------------------------------------------------------------------------> */
